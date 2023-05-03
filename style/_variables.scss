@@ -1,0 +1,49 @@
+// Light theme
+$theme-map-light: (
+  --theme-primary: #d34824,
+  --theme-secondary: #7D919B,
+  --theme-accent: #B66B55,
+  --theme-neutral: #f3f3f3, 
+  --theme-base-100: #e45734,
+  --theme-base-200: #2d3647,
+  --theme-base-300: #384458,
+  --theme-info: #329BCC,
+  --theme-success: #6CB288,
+  --theme-warning: #DAAD58,
+  --theme-error: #94443B,
+  --theme-bg: #FAFAFA,
+  --theme-bg-alt: #f1f1f1,
+  --theme-text: rgba(0, 0, 0, 0.7),
+  --theme-text-alt: rgb(107 114 128)
+);
+
+$theme-map-pink: (
+  --theme-primary: #ffbaea,
+  --theme-secondary: #7D919B,
+  --theme-accent: #B66B55,
+  --theme-neutral: #191D24, 
+  --theme-base-100: #2A303C,
+  --theme-info: #329BCC,
+  --theme-success: #6CB288,
+  --theme-warning: #DAAD58,
+  --theme-error: #94443B
+);
+
+// Dark theme
+$theme-map-dark: (
+  --theme-primary: #5c2012,
+  --theme-secondary: #7D919B,
+  --theme-accent: #9b4024,
+  --theme-neutral: #191D24,
+  --theme-base-100: #2d3647,
+  --theme-base-200: #e45734,
+  --theme-base-300: #d15232,
+  --theme-info: #329BCC,
+  --theme-success: #6CB288,
+  --theme-warning: #DAAD58,
+  --theme-error: #94443B,
+  --theme-bg: #1B1E2B,
+  --theme-bg-alt: #292D3E,
+  --theme-text: #FFFFFF,
+  --theme-text-alt: rgb(107 114 128)
+);

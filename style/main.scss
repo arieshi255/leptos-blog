@@ -2,6 +2,7 @@
 
 @import 'variables';
 @import 'mixins';
+@import 'hljs';
 
 :root, [data-theme] {
 	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -19,8 +20,7 @@
 
 	font-family: var(--font-body);
 	color: var(--theme-text);
-
-	@include spread-map($theme-map-light);
+  @include spread-map($theme-map-light);
 }
 
 [data-theme='dark'] { 
@@ -365,16 +365,9 @@ body {
 	padding: 0;
   margin: 0;
 	font-family: Berkeley Mono,JetBrains Mono,monospace;
+  font-style: normal;
   background-color: var(--theme-neutral);
   width: 100%;
-}
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-	background: var(--theme-neutral);
-  color: var(--theme-text);
 }
 
 @media (min-width: 1024px) {
@@ -498,4 +491,12 @@ button:focus:not(:focus-visible) {
 	position: absolute;
 	width: 1px;
 	white-space: nowrap;
+}
+
+.hljs {
+  background-color: var(--theme-neutral);
+}
+
+.hljs-keyword {
+  color:hsl(208, 60%, 41%);
 }

@@ -1,11 +1,24 @@
 use leptos::*;
+use leptos_dom::html::Section;
 use leptos_meta::*;
 use leptos_router::*;
 
 use crate::models::Post;
+use crate::bindings::hljs;
 
 #[component]
 pub fn PostContent(cx: Scope, post: Post) -> impl IntoView {
+  let content_ref = create_node_ref::<Section>(cx);
+
+  create_effect(cx, move |_| {
+    log!("Ran effect");
+    if let Some(node) = content_ref() {
+      node.on_mount(move |node| {
+        hljs::highlight_all();
+      });
+    }
+  });
+
   view! { cx,
     <section id="content">
       <div id="backtoposts">
@@ -26,7 +39,7 @@ pub fn PostContent(cx: Scope, post: Post) -> impl IntoView {
           inner_html={post.toc}
         ></div>
       </section>
-      <section class="post-content prose" inner_html={post.html}>
+      <section _ref=content_ref class="post-content prose" inner_html={post.html}>
       </section>
     </section>
   }

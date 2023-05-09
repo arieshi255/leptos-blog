@@ -17,6 +17,7 @@ pub mod components;
 pub mod layouts;
 pub mod routes;
 pub mod providers;
+pub mod bindings;
 
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
@@ -27,11 +28,12 @@ pub fn App(cx: Scope) -> impl IntoView {
   view! {
     cx,
 
+    <Stylesheet href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css"/>
+
     // injects a stylesheet into the document <head>
     // id=leptos means cargo-leptos will hot-reload this stylesheet
     <Stylesheet id="leptos" href="/pkg/start-axum-workspace.css"/>
 
-    <Stylesheet href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css"/>
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
 
     // sets the document title
@@ -56,8 +58,8 @@ pub fn App(cx: Scope) -> impl IntoView {
               }
           >
             <Route path="" view=|cx| view! { cx, <Home/> }/>
-            <Route path="posts" view=|cx| view!{ cx, <Blog/> } ssr=SsrMode::Async />
-            <Route path="posts/:slug" view=|cx| view!{ cx, <Post/> } ssr=SsrMode::Async />
+            <Route path="posts" view=|cx| view!{ cx, <Blog/> } ssr=SsrMode::PartiallyBlocked />
+            <Route path="posts/:slug" view=|cx| view!{ cx, <Post/> } ssr=SsrMode::PartiallyBlocked />
           </Route>
         </Routes>
       </main>

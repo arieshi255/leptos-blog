@@ -27,17 +27,32 @@ Markdown test
 
 <div class="code-block">
   <div class="language-tag">TypeScript</div>
-  <pre class="code-block-inner"><code>// server/tprc.ts
-// This creates the router instance along with its helpers
-import { TRPCError, initTRPC } from '@trpc/server';
-// Avoid exporting the entire t-object
-// since it's not very descriptive.
-// For instance, the use of a t variable
-// is common in i18n libraries.
-const t = initTRPC.create();
-// Base router and procedure helpers
-export const router = t.router;
-export const procedure = t.procedure;</code></pre>
+  <pre class="code-block-inner"><code>function $initHighlight(block, flags) {
+  try {
+    if (block.className.search(/\bno\-highlight\b/) != -1)
+      return processBlock(block, true, 0x0F) + ' class=""';
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) { // "0 / 2" should not be parsed as regexp
+    if (checkCondition(classes[i]) === undefined)
+      return /\d+/g;
+  }
+}</code></pre>
 </div>
 
+```js
+function $initHighlight(block, flags) {
+  try {
+    if (block.className.search(/\bno\-highlight\b/) != -1)
+      return processBlock(block, true, 0x0F) + ' class=""';
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) { // "0 / 2" should not be parsed as regexp
+    if (checkCondition(classes[i]) === undefined)
+      return /\d+/g;
+  }
+}
+```
 [title](https://www.example.com)

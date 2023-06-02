@@ -11,7 +11,6 @@ pub fn PostContent(cx: Scope, post: Post) -> impl IntoView {
   let content_ref = create_node_ref::<Section>(cx);
 
   create_effect(cx, move |_| {
-    log!("Ran effect");
     if let Some(node) = content_ref() {
       node.on_mount(move |node| {
         hljs::highlight_all();

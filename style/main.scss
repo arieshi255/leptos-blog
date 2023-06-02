@@ -500,3 +500,41 @@ button:focus:not(:focus-visible) {
 .hljs-keyword {
   color:hsl(208, 60%, 41%);
 }
+
+.error-container {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-error {
+  background-color: var(--theme-error);
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 6px;
+  border-radius: 6px;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+}
+
+.field-error > ul {
+  padding-left: 1em;
+}
+
+.turbo-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 2147483647;
+  transition:
+    width 300ms ease-out,
+    opacity 250ms 250ms ease-in-out;
+  transform: translate3d(0, 0, 0);
+}

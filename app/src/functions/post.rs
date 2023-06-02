@@ -42,6 +42,8 @@ pub async fn get_post_metadata() -> Result<Vec<PostMetadata>, ServerFnError> {
     .expect("Error reading file");
   let json: Result<Vec<PostMetadata>, Error> = serde_json::from_str(&data);
 
+  std::thread::sleep(std::time::Duration::from_millis(1250));
+
   json.map_err(|e| ServerFnError::ServerError(e.to_string()))
 }
 
@@ -56,6 +58,8 @@ pub async fn get_post(slug: String) -> Result<Option<Post>, ServerFnError> {
     Ok(r) => Some(into_post(r)),
     Err(_) => None,
   };
+
+  std::thread::sleep(std::time::Duration::from_millis(700));
 
   Ok(post)
 }

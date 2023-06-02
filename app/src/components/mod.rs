@@ -4,3 +4,5 @@ pub mod nav;
 pub use nav::*;
 pub mod dark_mode_toggle;
 pub use dark_mode_toggle::*;
+pub mod progress_bar;
+pub use progress_bar::*;
